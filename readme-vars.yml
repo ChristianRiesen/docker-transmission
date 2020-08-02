@@ -27,8 +27,9 @@ param_env_vars:
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "<path to data>", desc: "Where transmission should store config files and logs." }
-  - { vol_path: "/downloads", vol_host_path: "<path to downloads>", desc: "Local path for downloads." }
+  - { vol_path: "/downloads", vol_host_path: "<path to downloads>", desc: "Local path for completed downloads." }
   - { vol_path: "/watch", vol_host_path: "<path to watch folder>", desc: "Watch folder for torrent files." }
+  - { vol_path: "/incomplete", vol_host_path: "<path to store incomplete downloads>", desc: "Folder where incomplete downloads are stored." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "9091", internal_port: "9091", port_desc: "WebUI" }
