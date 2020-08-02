@@ -75,6 +75,7 @@ docker create \
   -v <path to data>:/config \
   -v <path to downloads>:/downloads \
   -v <path to watch folder>:/watch \
+  -v <path to incomplete folder>:/incomplete \
   --restart unless-stopped \
   linuxserver/transmission
 ```
@@ -102,6 +103,7 @@ services:
       - <path to data>:/config
       - <path to downloads>:/downloads
       - <path to watch folder>:/watch
+      - <path to incomplete folder>:/incomplete
     ports:
       - 9091:9091
       - 51413:51413
@@ -125,8 +127,9 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e USER=username` | Specify an optional username for the interface |
 | `-e PASS=password` | Specify an optional password for the interface |
 | `-v /config` | Where transmission should store config files and logs. |
-| `-v /downloads` | Local path for downloads. |
+| `-v /downloads` | Local path for completed downloads. |
 | `-v /watch` | Watch folder for torrent files. |
+| `-v /incomplete` | Local path for incomplete download files. |
 
 ## Environment variables from files (Docker secrets)
 
